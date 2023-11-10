@@ -30,9 +30,11 @@ function onFormSubmit(event) {
     localStorage.removeItem('feedback-form-state');
 }
 function onLoad() {
-    const email = loadFromLS('email');
-    const message = loadFromLS('message')
 
+    const key = loadFromLS('feedback-form-state');
+    const email = key.email;
+    const message = key.message
+    
     refs.formElem.elements.email.value = email;
     refs.formElem.elements.message.value = message;
 }
